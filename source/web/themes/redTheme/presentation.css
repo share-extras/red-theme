@@ -203,10 +203,35 @@ hr
    background-color: #F9FBFD;
 }
 
-.yui-skin-redTheme .yui-dt-data tr.yui-dt-odd.yui-dt-highlighted,
-.yui-skin-redTheme .yui-dt-data tr.yui-dt-even.yui-dt-highlighted
+/* Data Lists: DataTable (Needs to appear before yui-dt-highlighted rule) */
+
+.yui-skin-redTheme .datagrid tr.yui-dt-even
 {
-   background-color: #F4FAFF;
+   background-color: #ffffff;
+}
+.yui-skin-redTheme .datagrid tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-redTheme .datagrid tr.yui-dt-even td.yui-dt-desc
+{
+   background-color: #f8f8f8;
+}
+
+.yui-skin-redTheme .datagrid tr.yui-dt-odd
+{
+   background-color: #f8f8f8;
+}
+.yui-skin-redTheme .datagrid tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-redTheme .datagrid tr.yui-dt-odd td.yui-dt-desc
+{
+   background-color: #f0f0f0;
+}
+
+/* End Data Lists */
+
+.yui-skin-redTheme .yui-dt-data tr.yui-dt-highlighted,
+.yui-skin-redTheme .yui-dt-data tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-redTheme .yui-dt-data tr.yui-dt-highlighted td.yui-dt-desc
+{
+   background-color: #f5faff;
    cursor: auto;
 }
 
@@ -322,7 +347,17 @@ span.navigation-separator-alt
    border-right: 1px solid #457A9C;
 }
 
-/* Standard toolbar separator */
+/* Standard toolbar */
+
+.toolbar
+{
+   border-bottom: 1px solid #C7CCCE;
+}
+
+.toolbar .action-bar
+{
+   border-right: 1px solid #9eb0b7;
+}
 
 .toolbar .separator
 {
@@ -560,6 +595,34 @@ body.yui-skin-redTheme .yuimenu .bd ul li.yuimenuitem .yuimenuitemlabel-disabled
 
 /*end YUI Menu */
 
+/* Location */
+
+.yui-skin-redTheme .location-path,
+.yui-skin-redTheme .location-site
+{
+   background-position: left 50%;
+   background-repeat: no-repeat;
+   padding: 2px 0 2px 20px;
+}
+
+.yui-skin-redTheme .location-none
+{
+   margin-left: 0.5em;
+}
+
+.yui-skin-redTheme .location-path
+{
+   background-image: url(../../components/documentlibrary/images/folder-closed-16.png);
+   margin-left: 0.5em;
+}
+
+.yui-skin-redTheme .location-site
+{
+   background-image: url(../../components/images/site-16.png);
+}
+
+/* end Location*/
+
 /* Doclist */
 
 body.yui-skin-redTheme .doclist .more-actions a:active,
@@ -588,7 +651,6 @@ body.yui-skin-redTheme .doclist tr.yui-dt-highlighted
 
 body.yui-skin-redTheme .links-body tr.links-selected-row,
 body.yui-skin-redTheme .over,
-.postview,
 .topicview
 {
    background-color: #f4faff;
@@ -634,6 +696,7 @@ body.yui-skin-redTheme .categoryview .category .ygtvdepthcell
 .yui-skin-redTheme .filter li.selected,
 .yui-skin-redTheme .tags li.selected,
 .yui-skin-redTheme .treeview .selected,
+.yui-skin-redTheme .categoryview .selected,
 .archive li.selected,
 .tool li.selected,
 body.yui-skin-redTheme .yui-columnbrowser .yui-carousel-content li.yui-columnbrowser-column a.yui-columnbrowser-item-selected
@@ -641,9 +704,9 @@ body.yui-skin-redTheme .yui-columnbrowser .yui-carousel-content li.yui-columnbro
    background-color: #fbc4c5;
 }
 
-/* this rule needs to be separate from the above for ie6 */
-
-.yui-skin-redTheme .treeview .selected > table
+/* these rules need to be separate from the above for ie6 */
+.yui-skin-redTheme .treeview .selected > table,
+.yui-skin-redTheme .categoryview .selected > table
 {
    background-color: #fbc4c5;
 }
@@ -674,10 +737,15 @@ li.selected a.filter-link,
 li.selected a.tool-link, 
 li.selected a.archive-link,
 li.selected a.tag-link,
+li.selected span.tag,
 body.yui-skin-redTheme .treeview .selected table .ygtvlabel, 
 body.yui-skin-redTheme .treeview .selected table .ygtvlabel:link, 
 body.yui-skin-redTheme .treeview .selected table .ygtvlabel:visited, 
-body.yui-skin-redTheme .treeview .selected table .ygtvlabel:hover
+body.yui-skin-redTheme .treeview .selected table .ygtvlabel:hover,
+body.yui-skin-redTheme .categoryview .selected table .ygtvlabel,
+body.yui-skin-redTheme .categoryview .selected table .ygtvlabel:link,
+body.yui-skin-redTheme .categoryview .selected table .ygtvlabel:visited,
+body.yui-skin-redTheme .categoryview .selected table .ygtvlabel:hover
 {
    
 }
@@ -685,7 +753,11 @@ body.yui-skin-redTheme .treeview .selected table .ygtvlabel:hover
 body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel, 
 body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:link, 
 body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:visited, 
-body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:hover
+body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:hover,
+body.yui-skin-redTheme .categoryview .selected div.ygtvchildren table .ygtvlabel,
+body.yui-skin-redTheme .categoryview .selected div.ygtvchildren table .ygtvlabel:link,
+body.yui-skin-redTheme .categoryview .selected div.ygtvchildren table .ygtvlabel:visited,
+body.yui-skin-redTheme .categoryview .selected div.ygtvchildren table .ygtvlabel:hover
 {
    
 }
@@ -702,7 +774,8 @@ body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:hov
 .yui-skin-redTheme .doclist .documents a,
 .yui-skin-redTheme .attrValue a,
 .yui-skin-redTheme .detail .item a,
-.yui-skin-redTheme .info .meta-value a
+.yui-skin-redTheme .info .meta-value a,
+.yui-skin-redTheme .rules-none a
 {
    color: #ef1216;
 }
@@ -717,16 +790,9 @@ body.yui-skin-redTheme .treeview .selected div.ygtvchildren table .ygtvlabel:hov
    /*background-image: url(./images/navigation-bg.png);*/
 }
 
-/* Standard toolbar */
-
-.toolbar
+.yui-skin-redTheme .rules-list a
 {
-   border-bottom: 1px solid #C7CCCE;
-}
-
-.toolbar .action-bar
-{
-   border-right: 1px solid #9eb0b7;
+   color: #515D6B;
 }
 
 /* Calendar */
@@ -846,24 +912,38 @@ div.theme-bg-color-5
    background-color: #2B6EB5;
 }
 
-/* Wiki page list button background */
+.theme-bg-color-6,
+div.theme-bg-color-6
+{
+   background-color: #F4FAFF;
+}
+
+/* Used for editing - same as meta data fields */
+
+.theme-bg-color-7,
+div.theme-bg-color-7
+{
+   background-color: #F5FFF2;
+}
+
+
 .theme-bg-1
 {
 
 }
 
-/* Site toolbar / second-level nav */
 .theme-bg-2
 {
    background-color: #E3EAEC;
-/* bac
+}
 
-kground-image: url(images/navbar-bg-2.png); */
+.theme-bg-selected
+{
+   background-color: #73B4DA;
 }
 
 /* Theme border type/colors */
 
-/* Border around site title bar */
 .theme-border-1
 {
    border-color: #b50e11;
@@ -873,4 +953,37 @@ kground-image: url(images/navbar-bg-2.png); */
 .theme-border-2
 {
    border-color: #2B6EB5;
+}
+
+.theme-border-3
+{
+   border: 1px solid #c6c6c6 !important;
+}
+
+
+.docfolder-label
+{
+   overflow:auto;
+}
+
+.docfolder-input
+{
+   width: 203px; 
+   vertical-align: top; 
+   margin-top: 2px;
+}
+
+.tree-div
+{
+   height: 200px;
+   overflow: auto;
+   margin-left: 5px;
+}
+
+.ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited, .ygtvlabel:hover
+{
+   background-color: #F9FBFD;
+   cursor: pointer;
+   margin-left: 2px;
+   text-decoration: none;
 }
